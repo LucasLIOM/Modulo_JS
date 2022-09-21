@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatando Strings</title>
+    <style>
+        h1 {
+            font-size: normal 15pt Arial;
+            color: red;
+        }
+        p {
+            font-size: normal 5pt Arial;
+            color: red;
+            
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        var nome = window.prompt('Qual o seu nome?')
+        document.write(`
+    <h1> 
+        Olá ${nome}! 
+    </h1> 
+        </br> 
+            <p> 
+                Seu nome possui ${nome.length} letras. 
+        </br> 
+                Seu nome em maiúsculo: ${nome.toUpperCase()}. 
+        </br> 
+                Seu nome em minúsculo: ${nome.toLowerCase()} 
+            </p>`)
+
+    </script>
+</body>
+</html>
