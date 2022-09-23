@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        div#square {
+            background-color: gray;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <div id = "square">
+        Interaja!
+    </div>
+    <script>        
+
+        // ID da DIV
+        let squareId = window.document.getElementById('square')
+
+        // Listeners
+        squareId.addEventListener('click', mouseClick)
+        squareId.addEventListener('mouseenter', mouseEnter)
+        squareId.addEventListener('mouseout', mouseOut)
+
+        // Evento de clicar
+        function mouseClick(){
+            let mouseClickChange = window.document.getElementById('square')
+            mouseClickChange.innerText = 'Clicou!'
+            mouseClickChange.style.background = 'green'
+        }
+
+        // Evento de entrar
+        function mouseEnter(){
+            let mouseEnterChange = window.document.getElementById('square')
+            mouseEnterChange.innerText = 'Entrou!'
+            mouseEnterChange.style.background = 'yellow'
+        }
+
+        // Evento de sair
+        function mouseOut(){
+            let mouseOutChange = window.document.getElementById('square')
+            mouseOutChange.innerText = 'Saiu!'
+            mouseOutChange.style.background = 'red'
+        }
+        
+    </script>
+</body>
+</html>
