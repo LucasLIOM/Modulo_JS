@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            background: white;
+            color: black;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1> Primeiros passos </h1>
+    <hr>
+
+    <p> Seleção por Tag </p>
+    <p id      = "selectId"> Seleção por ID </p>
+    <p name    = "selectName"> Seleção por Nome </p>
+    <p class   = "selectClass"> Seleção por Classe </p>
+    <div id    = "selectorId"> Seleção pelo Seletor ID </div>
+    <div class = "selectorClass">Seleção pelo Seletor Class</div>
+    
+    <hr>
+    <script>
+
+        // innerText: Pega apenas o texto
+        // innerHTML: Pega o texto, porém formatado
+
+        // Seleção de elementos através da Tag
+        
+        var selectTag = window.document.getElementsByTagName('p')[0]
+        selectTag.style.color = 'green'
+
+        // Seleção de elementos através de ID
+
+        var selectId = window.document.getElementById('selectId')
+        selectId.style.color = 'red'
+
+        // Seleção de elementos através do Nome
+
+        var selectName = window.document.getElementsByName('selectName')[0]
+        selectName.style.color = 'blue'
+
+        // Seleção de elementos através da Classe
+
+        var selectClass = window.document.getElementsByClassName('selectClass')[0]
+        selectClass.style.color = 'purple'
+
+        // Seleção de elementos através do Seletor ID
+        // Quando se utiliza uma ID para seletor, sempre utilizamos #
+
+        var selectClass = window.document.querySelector('div#selectorId')
+        selectClass.style.color = 'gray'
+
+        // Seleção de elementos através do Seletor Class
+        // Quando se utiliza uma Class para seletor, sempre utilizamos .
+
+        var selectClass = window.document.querySelector('div.selectorClass')
+        selectClass.style.color = 'yellow'
+
+    </script>
+</body>
+</html>
