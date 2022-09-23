@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Valores</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+        }
+        h1 {
+            margin-left: 75pt;
+        }
+        input {
+            text-align: center;
+            background-color: azure;
+        }
+        div#resultSum {
+            margin-top: 25pt;
+            margin-left: 95pt;
+        }
+    </style>
+</head>
+
+    <h1>Cálculo</h1>
+    <input type = "number" name = "numberOne"    id = "numberOne"> +
+    <input type = "number" name = "numberTwo"    id = "numberTwo">
+    <input type = "button" name = "btnCalculate" id = "btnCalculate" value = "Calcular" onclick = "calculateSum()">
+    <div id = "resultSum"> Resultado </div>
+    <script>
+
+        function calculateSum() {
+
+            // Variaveis declaradas
+            let numberOne = window.document.getElementById('numberOne')
+            let numberTwo = window.document.getElementById('numberTwo')
+            let resultSum = window.document.getElementById('resultSum')
+
+            // Números convertidos
+            let convertNumberOne = Number(numberOne.value)
+            let convertNumberTwo = Number(numberTwo.value)
+
+            // A soma final
+            let finalValue = (convertNumberOne + convertNumberTwo)
+
+            // Resultado da soma
+            resultSum.innerHTML = `A soma entre ${convertNumberOne} e ${convertNumberTwo} é igual a <strong>${finalValue}</strong>`
+            resultSum.style.marginLeft = "30pt";
+
+        }
+
+    </script>
+</body>
+</html>
