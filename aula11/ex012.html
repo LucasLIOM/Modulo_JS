@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-brs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+        }
+        input#txtNacionality {
+            text-align: center;
+            font: normal 12pt Arial;
+        }
+        p {
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sistema de segurança</h1>
+        <p id = "infoMsg"> Coloque abaixo a sua nacionalidade! </p>
+        <input 
+        type        = "text"
+        placeholder = "Nacionalidade"
+        id          = "txtNacionality">
+    </div>
+
+    <script>
+
+        var infoMsg = window.document.getElementById('infoMsg')
+        var txtNacionality = window.document.getElementById('txtNacionality')
+        txtNacionality.addEventListener('keydown', CheckNacionality)
+
+        function Timer(){
+            infoMsg.style.color = 'black'
+            infoMsg.innerText = 'Coloque abaixo a sua nacionalidade!'
+            return 
+        }
+
+        function CheckNacionality() {
+        
+            if (event.key == "Enter") {
+                if (txtNacionality.value != 'Brasileiro'){
+                    infoMsg.style.color = 'red'
+                    infoMsg.innerText = 'Estrangeiro detectado!'
+                    setInterval(Timer, 1000*2);
+                }else {
+                    infoMsg.style.color = 'green'
+                    infoMsg.innerText = 'Bem Vindo(a)!'
+                    setInterval(Timer, 1000*2);
+                }
+            } 
+        }
+        
+    </script>
+</body>
+</html>
