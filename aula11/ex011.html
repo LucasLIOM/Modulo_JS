@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, pink , orange);
+        }
+        h1 {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+        }
+        input {
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de velocidade</h1>
+    <div>
+        Velocidade: <input 
+        placeholder = "Coloque aqui a velocidade" 
+        type        = "number" 
+        name        = "numberSpeed" 
+        id          = "numberSpeed"> KM/h
+    </div>
+    <h3 id = "resultValueSpeed"></h3>
+
+    <script>
+
+        var inputNumberSpeed = window.document.getElementById('numberSpeed')
+        var resultValueSpeed = window.document.getElementById('resultValueSpeed')    
+        inputNumberSpeed.addEventListener('keydown', calculateSpeed);
+
+        function calculateSpeed(){
+
+            let convertNumberSpeed = Number(inputNumberSpeed.value)
+            let maxSpeed = 100
+
+            var noSpeed     = 'ERRO!</br>Digite a sua velocidade!'
+            var noUltrapass     = 'ERRO!</br>Sua velocidade não pode ultrapassar 500KM/h'
+            var dangerSpeed = 'CUIDADO!</br>Sua velocidade é ' + convertNumberSpeed + 'KM/H, está acima de ' + maxSpeed + 'KM/h!'
+            var mediumSpeed = 'ATENÇAO!</br>Sua velocidade é ' + convertNumberSpeed + 'KM/H, tome cuidado para não ultrapassar a velocidade permitida!'
+            var lowSpeed    = 'TUDO CERTO!</br>Sua velocidade é ' + convertNumberSpeed + 'KM/H, continue desta forma!'
+
+            if (event.key == "Enter"){
+                if (convertNumberSpeed > 500)   {
+                    setText()
+                    resultValueSpeed.style.color = 'gray'
+                    resultValueSpeed.innerHTML = noUltrapass
+
+                } else if (convertNumberSpeed == 0 || convertNumberSpeed == null || convertNumberSpeed == undefined) { 
+                    setText()
+                    resultValueSpeed.style.color = 'gray'
+                    resultValueSpeed.innerHTML = noSpeed
+                
+                } else if (convertNumberSpeed > maxSpeed) {
+                    setText()
+                    resultValueSpeed.style.color = 'red'
+                    resultValueSpeed.innerHTML = dangerSpeed
+
+                } else if (convertNumberSpeed <= maxSpeed && convertNumberSpeed >= 70) {
+                    setText()
+                    resultValueSpeed.style.color = 'yellow'
+                    resultValueSpeed.innerHTML = mediumSpeed
+
+                } else {
+                    setText()
+                    resultValueSpeed.style.color = 'green'
+                    resultValueSpeed.innerHTML = lowSpeed
+
+                }
+            }
+        }
+
+        function setText() {
+            resultValueSpeed.style.fontSize = "12pt"
+            resultValueSpeed.style.fontFamily = "Arial"
+            resultValueSpeed.style.textAlign = "center"
+        }
+
+    </script>
+</body>
+</html>
