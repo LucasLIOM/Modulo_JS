@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificar Idade</h1>
+    </header>
+    
+    <section>
+        
+        <div class = "txtInfo"></div>
+
+        <div>
+            <p>• Ano de Nascimento: 
+                <input type = "text" id = "yearBirth" maxlength = "4">
+            </p>
+            <p>• Sexo: 
+                <input type = "radio" name = "checkSex" id = "checkMasculine">
+                <label for = "checkMasculine">Masculino</label>
+
+                <input type = "radio" name = "checkSex" id = "checkFeminine">
+                <label for = "checkFeminine">Feminino</label>
+            </p>
+            <p class = "btnCheck">
+                Verificar
+            </p>
+
+        </div>
+
+        <div>
+            <p class = "txtResult"></p>
+        </div>
+
+    </section>
+    <footer>
+        <p>&copy; Lucas Lins </p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

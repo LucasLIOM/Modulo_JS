@@ -23,19 +23,19 @@
 
         // Manhã
         if (currentHour >= 6 && currentHour < 12){
-            imgPhoto.src = 'images/photo_morning.webp'
+            imgPhoto.src = '../Images/photo_morning.webp'
             body.style.background = '#FFE4B5'
             section.style.background = '#FFDAB9'
 
         // Tarde
         } else if (currentHour >= 12 && currentHour < 18){
-            imgPhoto.src = 'images/photo_afternoon.webp'
+            imgPhoto.src = '../Images/photo_afternoon.webp'
             body.style.background = '#FF8C00'
             section.style.background = '#FF7F50'
 
         // Noite
         } else {
-            imgPhoto.src = 'images/photo_night.webp'
+            imgPhoto.src = '../Images/photo_night.webp'
             body.style.background = '#1C1C1C'
             section.style.background = '#4F4F4F'
 
